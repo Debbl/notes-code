@@ -1,0 +1,11 @@
+- location 
+    - https://developer.mozilla.org/zh-CN/docs/Web/API/Location
+- history 
+    - https://developer.mozilla.org/zh-CN/docs/Web/API/History
+- history.pushState() 
+    - https://developer.mozilla.org/zh-CN/docs/Web/API/History/pushState
+- npopstate 注意一下备注的内容
+    - https://developer.mozilla.org/zh-CN/docs/Web/API/Window/popstate_event
+
+- code
+    - https://github.com/Debbl/notes-code/tree/main/01_前端路由的简单实现方式
