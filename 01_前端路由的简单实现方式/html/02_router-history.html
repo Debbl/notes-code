@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app">
+      <a href="/home">home</a>
+      <a href="/about">about</a>
+      <div class="router-view"></div>
+    </div>
+
+    <script>
+      const aEls = document.querySelectorAll("a");
+      const routerViewEl = document.querySelector(".router-view");
+
+      aEls.forEach((aEl) => {
+        aEl.addEventListener("click", (e) => {
+          e.preventDefault();
+          // console.log("OK");
+          const href = aEl.getAttribute("href");
+          // console.log(href);
+          history.pushState({}, "", href);
+          // console.log(location.pathname, "---");
+          historyChange();
+        });
+      });
+
+      window.addEventListener("go", () => {
+        console.log(location.pathname, "go");
+      });
+      window.addEventListener("popstate", () => {
+        console.log(location.pathname, "pop");
+        historyChange();
+      });
+
+      function historyChange() {
+        switch (location.pathname) {
+          case "/home":
+            routerViewEl.innerHTML = "<h2>首页</h2>";
+            break;
+          case "/about":
+            routerViewEl.innerHTML = "<h2>关于</h2>";
+            break;
+          default:
+            routerViewEl.innerHTML = "默认";
+        }
+      }
+    </script>
+  </body>
+</html>
